@@ -29,7 +29,7 @@ export default function ProductsDetailPage() {
 
   const fetchProductInfo = async (productId) => {
     try {
-      let response = await fetch("http://localhost:8181/product/"+productId);
+      let response = await fetch(import.meta.env.VITE_BACKEND_HOST+ "/" +productId);
       if(!response.ok){
         response = await response.json()
         console.log(response);
