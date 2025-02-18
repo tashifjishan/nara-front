@@ -29,7 +29,6 @@ function LoginSection() {
           "content-type": "application/json"
         },
         body: JSON.stringify(userData),
-        mode: 'cors',
         credentials: 'include',
       });
       if (!response.ok) {

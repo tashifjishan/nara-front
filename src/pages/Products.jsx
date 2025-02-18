@@ -20,7 +20,7 @@ const Products = () => {
       try {
         setIsLoading(true);
         // const productsData = await fetchProducts();
-        let response = await fetch(`http://localhost:8585/product/all`);
+        let response = await fetch(import.meta.env.VITE_BACKEND_HOST+'/product/all');
        
         if(!response.ok) {
           response = await response.json();
