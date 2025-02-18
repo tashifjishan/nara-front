@@ -222,7 +222,7 @@ function PaymentButton() {
 
   const handlePayment = async () => {
     try {
-      const response = await fetch("http://localhost:8181/order/create", {
+      const response = await fetch(import.meta.env.VITE_BACKEND_HOST+"/order/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -243,7 +243,7 @@ function PaymentButton() {
           try {
             console.log("OrderId Backend", order.id)
             console.log("OrderId RazorPay",response.razorpay_order_id)
-            await fetch("http://localhost:8181/order/verify", {
+            await fetch(import.meta.env.VITE_BACKEND_HOST+"/order/verify", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
